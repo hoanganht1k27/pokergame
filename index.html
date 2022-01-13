@@ -75,7 +75,7 @@
 
         firebase.database().ref("messages/" + roomId).on("child_added", (snapshot) => {
             const data = snapshot.val()
-            $('.chat-container2').animate({scrollTop: $('.chat-container2').prop('scrollHeight')});
+            // $('.chat-container2').animate({scrollTop: $('.chat-container2').prop('scrollHeight')});
             // console.log($(".chat-container2").())
             $(".chat-container2").append(`
             <div class="eachchat-container">
@@ -89,6 +89,7 @@
                 </div>
             </div>
             `)
+            $('.chat-container2').scrollTop($('.chat-container2').prop('scrollHeight'))
         })
 
         function sendMessage() {
@@ -109,6 +110,13 @@
             })
         }
 
+        function enterRoom() {
+            let newRoomId = $("#roomId").val()
+            roomId = newRoomId
+            setCookie("roomId", roomId, 365)
+            location.reload()
+        }
+
         $(document).ready(function() {
             $('.header').html("Your roomd id is " + roomId)
             $('#cc').keydown(function(e) {
@@ -116,7 +124,7 @@
                     sendMessage()
                 }
             })
-            $('.chat-container2').animate({scrollTop: $('.chat-container2').prop('scrollHeight')});
+            $('.chat-container2').scrollTop($('.chat-container2').prop('scrollHeight'))
         })
 
       </script>
@@ -124,6 +132,8 @@
 </head>
 <body>
     <h1 class="header">Chat app</h1>
+    <input id="roomId" type="text" placeholder="Enter room id you want to enter ...">
+    <button id="enter" onclick="enterRoom()">Enter</button>
     <!-- <input type="text"> -->
     <div class="chat-container">
         <div class="chat-container2">
