@@ -1,0 +1,68 @@
+.chat-container {
+    width: 40%;
+}
+
+.chat-container2 {
+    padding: 10px;
+    border: black 5px solid;
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+.message-input-container {
+    overflow: hidden;
+    padding: 10px;
+}
+
+.message-input-container input[type="text"] {
+    display: block;
+    width: 80%;
+    float: left;
+    font-size: 20px;
+    padding: 4px;
+}
+
+.message-input-container button {
+    display: block;
+    width: calc(20% - 22px);
+    float: left;
+    margin-left: 10px;
+    padding: 4px;
+    font-size: 20px;
+}
+
+.message-container {
+    background: #e3e3e3;
+    padding: 10px;
+    margin: 10px;
+    font-family: calibri;
+    max-width: 80%;
+}
+
+.name-container h5 {
+    margin: 0;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.other-message .name-container {
+    text-align: left;
+}
+
+.my-message .name-container {
+    text-align: right;
+}
+
+.eachchat-container {
+    overflow: hidden;
+}
+
+.eachchat-container .other-message {
+    float: left;
+}
+
+.eachchat-container .my-message {
+    float: right;
+}
+
+
