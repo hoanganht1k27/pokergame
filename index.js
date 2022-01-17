@@ -81,7 +81,7 @@
         firebase.database().ref("messages/" + roomId).on("child_added", (snapshot) => {
             const data = snapshot.val()
             unreadMess++
-            $('.badge').html(unreadMess)
+            $('.unreadMessage').html(unreadMess)
             // $('.chat-container2').animate({scrollTop: $('.chat-container2').prop('scrollHeight')});
             // console.log($(".chat-container2").())
             $(".chat-container2").append(`
@@ -138,7 +138,7 @@
             $('.message-open').click(() => {
                 $('.chat-container').toggle()
                 unreadMess = 0
-                $('.badge').html(0)
+                $('.unreadMessage').html(0)
             })
         })
 
@@ -736,8 +736,8 @@
             $('.raise-value span').html($('#customRange2').val())
         }
 
-        function updateRaiseRange() {
-            firebase.database().ref("allrooms/" + roomId + "/members/" + userId).once("value", (snapshot) => {
+        async function updateRaiseRange() {
+            await firebase.database().ref("allrooms/" + roomId + "/members/" + userId).once("value", (snapshot) => {
                 if(!snapshot.exists()) {
 
                 } else {
@@ -873,7 +873,7 @@
         var allTurnCard = null
 
         async function doNextTurn(ktt) {
-            updateRaiseRange()
+            await updateRaiseRange()
             if(over == 1) return
             let pot = await getPot()
             $('.pot-total').html("Pot total: " + pot + "$")
@@ -1306,7 +1306,7 @@
                     return
                 }
                 if(userId == t[1]) {
-                    waitForSeconds(10)
+                    waitForSeconds(7)
                     // return
                 } else {
                     $('#startgame').click()
