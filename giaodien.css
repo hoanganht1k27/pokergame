@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.pokertable {
+    width: 100%;
+    padding-top: 40%;
+    background: yellow;
+    border: 10px solid black;
+    border-radius: 30%;
+    position: relative;
+}
+
+.player-container {
+    width: 80px;
+    position: absolute;
+}
+
+.player-info-container {
+    width: 100%;
+    background-color: orange;
+    /* color: white; */
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 0;
+    overflow: hidden;
+    font-size: 12px;
+    /* font-size: 1vw; */
+}
+
+.pos1 {
+    top: 0;
+    left: 25%;
+    transform: translateY(-50%);
+}
+
+.pos2 {
+    top: 0;
+    right: 25%;
+    transform: translateY(-50%);
+}
+
+.pos3 {
+    top: 50%;
+    right: 0;
+    transform: translate(20%, -50%);
+}
+
+.pos4 {
+    bottom: 0;
+    right: 25%;
+    transform: translateY(50%);
+}
+
+.pos5 {
+    bottom: 0;
+    left: 25%;
+    transform: translateY(50%);
+}
+
+.pos6 {
+    bottom: 50%;
+    left: 0;
+    transform: translate(-20%, 50%);
+}
+
+.player-card-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.player-card {
+    position: relative;
+    width: 35px;
+    height: 50px;
+    font-size: 12px;
+    border: 5px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.card-number-top, .card-number-bottom, .card-type {
+    position: absolute;
+}
+
+.card-type {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+}
+
+.card-number-bottom {
+    right: 2px;
+    bottom: 0;
+}
+
+
+
+.player-name {
+    text-align: center;
+    font-weight: bold;
+}
+
+.player-money {
+    text-align: center;
+    font-weight: bold;
+}
+
+.pot-info-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+.pot-info {
+    /* display: flex; */
+    /* justify-content: space-around; */
+    width: 100%;
+}
+
+.all-card-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pot-sum {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.raise-container {
+}
+
+.raise-range {
+    
+}
+
+.raise-value-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.yourturn .player-info-container {
+    background-color: green;
+    color: white;
+}
+
+.yourturn-alarm {
+    font-weight: bold;
+    font-size: 15px;
+    display: none;
+}
+
+.timer-container {
+    background-color: blue;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    top: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.player-card.bimat {
+    background-color: grey;
+    color: grey;
+}
+
+.footer {
+    background: #e3e3e3;
+    padding: 10px;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 100px;
+}
