@@ -1,18 +1,8 @@
-.chat-container {
-    width: 40%;
-}
-
-@media only screen and (max-width: 600px) {
-    .chat-container{
-        width: 100%;
-    }
-  }
-
 .chat-container2 {
     padding: 10px;
     border: black 5px solid;
     overflow-y: auto;
-    height: 500px;
+    max-height: 300px;
 }
 
 .message-input-container {

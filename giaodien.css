@@ -189,3 +189,25 @@ p {
     text-align: center;
     margin-top: 100px;
 }
+
+.message-open {
+    position: fixed;
+    top: 80px;
+    left: 10px;
+}
+
+.chat-container {
+    position: fixed;
+    top: 130px;
+    left: 10px;
+    background-color: white;
+    width: 40%;
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .chat-container {
+        width: 80%;
+    }
+}
+

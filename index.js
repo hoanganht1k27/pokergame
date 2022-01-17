@@ -76,9 +76,12 @@
         }
 
         // var realStart = 0
+        var unreadMess = 0
 
         firebase.database().ref("messages/" + roomId).on("child_added", (snapshot) => {
             const data = snapshot.val()
+            unreadMess++
+            $('.badge').html(unreadMess)
             // $('.chat-container2').animate({scrollTop: $('.chat-container2').prop('scrollHeight')});
             // console.log($(".chat-container2").())
             $(".chat-container2").append(`
@@ -132,6 +135,11 @@
                 }
             })
             $('.chat-container2').scrollTop($('.chat-container2').prop('scrollHeight'))
+            $('.message-open').click(() => {
+                $('.chat-container').toggle()
+                unreadMess = 0
+                $('.badge').html(0)
+            })
         })
 
           let userId = getCookie("userid")
