@@ -152,7 +152,7 @@
 
         async function shuffleCard() {
             let card = [];
-            for(let i = 1; i <= 13; i++) {
+            for(let i = 2; i <= 14; i++) {
                 card.push(i + "-ro")
                 card.push(i + "-co")
                 card.push(i + "-bich")
@@ -165,6 +165,8 @@
             })
             await Promise.all(arr)
         }
+
+        setTimeout(1500, addMemToRoom())
 
         async function addMemToRoom() {
             let kt = 0
@@ -798,6 +800,7 @@
         async function getCurTurnName() {
             let ans = ""
             await firebase.database().ref("allrooms/" + roomId + "/turn").once("value", async (snapshot) => {
+                if(!snapshot.exists()) return
                 ans = snapshot.val().turn
             })
             return ans
@@ -937,7 +940,6 @@
 
         async function joinGame() {
             if(joinGame == 1) return
-            await addMemToRoom()
             if(askedToJoin == 0) {
                 await firebase.database().ref("allrooms/" + roomId + "/members").remove()
             }
@@ -1049,7 +1051,7 @@
         }
 
         function getNumberOfCard(n) {
-            if(n == "1") return "A"
+            if(n == "14") return "A"
             if(n == "11") return "J"
             if(n == "12") return "Q"
             if(n == "13") return "K"
@@ -1059,6 +1061,7 @@
         var allFlopCards = []
 
         firebase.database().ref("allrooms/" + roomId + "/turn").on("value", async (snapshot) => {
+            if(!snapshot.exists()) return
             let turn = snapshot.val().turn
             if(turn == "Flop") {
                 allFlopCards = await getFlopCards()

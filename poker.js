@@ -95,8 +95,8 @@ function specialStraight(cards) {
         } else arr[n] = 1
     });
     ans.sort(function(a, b){return a - b})
-    if(ans[0] == 1 && ans[1] == 10 && ans[2] == 11 && ans[3] == 12 && ans[4] == 13) {
-        return 10
+    if(ans[0] == 2 && ans[1] == 3 && ans[2] == 4 && ans[3] == 5 && ans[4] == 14) {
+        return 1
     }
     return false
 }
@@ -259,7 +259,9 @@ function getBestHand(cards) {
     return [res, ans]
 }
 
-let test = ["11-ro", "12-chuon", "13-co", "4-ro", "5-ro", "1-ro", "10-bich"]
+// let test = ["2-ro", "4-chuon", "3-co", "4-ro", "5-ro", "14-ro", "10-bich"]
+// let test1 = ['12-ro', '13-ro', '14-ro', '12-bich', '6-bich']
+// let test2 = ['12-ro', '13-ro', '12-bich', '11-ro', '14-chuon']
 
 function checkRankOfHand(cards) {
     if(checkStraightFlush(cards)) return 8
